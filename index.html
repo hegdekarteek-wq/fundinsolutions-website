@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FundInSolutions - Leading Corporate DMA for 165+ Banks & NBFCs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #FFD700;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .mobile-menu {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1e3c72;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 15px 35px;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #1e3c72;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.8rem;
+            color: #1e3c72;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .feature-box {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 4px solid #FFD700;
+        }
+
+        .feature-box .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-box h4 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-box p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Services Section */
+        .services {
+            background: #f8f9fa;
+            padding: 100px 0;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 5px solid #FFD700;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .service-card .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #1e3c72;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+
+        .service-card .rate {
+            font-size: 1.3rem;
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 5px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-features li:before {
+            content: '✓';
+            color: #27ae60;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Partners Section */
+        .partners {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .partners-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .partners h2 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 50px;
+        }
+
+        .partners-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .partner-logo {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #1e3c72;
+            transition: all 0.3s;
+        }
+
+        .partner-logo:hover {
+            background: #1e3c72;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #FFD700;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item .icon {
+            margin-right: 15px;
+            font-size: 1.3rem;
+            color: #FFD700;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #888;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Success message */
+        .success-message {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">FundInSolutions</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <h1>Leading Corporate DMA</h1>
+            <p class="subtitle">Authorized by 165+ Banks & NBFCs</p>
+            <p>We are the trusted corporate direct marketing agent providing comprehensive loan solutions across all major financial institutions in India. From personal loans to corporate financing, we bridge the gap between borrowers and lenders.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-primary">Partner With Us</a>
+                <a href="#services" class="btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">165+</div>
+                    <div class="stat-label">Banks & NBFCs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Loan Products</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Customers Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">₹500Cr+</div>
+                    <div class="stat-label">Loans Facilitated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Your Trusted Financial Partner</h2>
+                <p>FundInSolutions stands as India's premier corporate DMA, authorized to represent over 165 banks and NBFCs. We specialize in providing end-to-end loan solutions for individuals and businesses across diverse financial needs.</p>
+                <p>Our extensive network and deep industry expertise enable us to offer competitive rates, faster approvals, and personalized service that sets us apart in the financial services landscape.</p>
+                <a href="#contact" class="btn-primary">Learn More About Us</a>
+            </div>
+            <div class="about-features">
+                <div class="feature-box">
+                    <div class="icon">🏦</div>
+                    <h4>Extensive Network</h4>
+                    <p>Direct access to 165+ banks and NBFCs</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon">⚡</div>
+                    <h4>Quick Processing</h4>
+                    <p>Streamlined approval process</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon">💼</div>
+                    <h4>Corporate Expertise</h4>
+                    <p>Specialized in business financing</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon">🎯</div>
+                    <h4>Best Rates</h4>
+                    <p>Competitive interest rates guaranteed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Our Loan Products</h2>
+                <p>Comprehensive financing solutions across all major loan categories</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">🏠</div>
+                    <h3>Home Loans</h3>
+                    <div class="rate">Starting from 8.5%*</div>
+                    <p>Comprehensive home financing solutions for purchase, construction, and renovation.</p>
+                    <ul class="service-features">
+                        <li>Up to ₹10 Crore loan amount</li>
+                        <li>Tenure up to 30 years</li>
+                        <li>Minimal processing charges</li>
+                        <li>Quick approval process</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">👤</div>
+                    <h3>Personal Loans</h3>
+                    <div class="rate">Starting from 10.5%*</div>
+                    <p>Instant personal financing for any legitimate personal need.</p>
+                    <ul class="service-features">
+                        <li>Up to ₹40 Lakh amount</li>
+                        <li>No collateral required</li>
+                        <li>24-hour approval</li>
+                        <li>Flexible EMI options</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">💼</div>
+                    <h3>Business Loans</h3>
+                    <div class="rate">Starting from 11.5%*</div>
+                    <p>Working capital and term loans for business growth and expansion.</p>
+                    <ul class="service-features">
+                        <li>Up to ₹50 Crore funding</li>
+                        <li>Working capital solutions</li>
+                        <li>Equipment financing</li>
+                        <li>Minimal documentation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🚗</div>
+                    <h3>Vehicle Loans</h3>
+                    <div class="rate">Starting from 8.9%*</div>
+                    <p>Financing for new and used cars, commercial vehicles, and two-wheelers.</p>
+                    <ul class="service-features">
+                        <li>Up to 90% financing</li>
+                        <li>New & used vehicles</li>
+                        <li>Commercial vehicles</li>
+                        <li>Competitive rates</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🎓</div>
+                    <h3>Education Loans</h3>
+                    <div class="rate">Starting from 9.5%*</div>
+                    <p>Funding for higher education in India and abroad.</p>
+                    <ul class="service-features">
+                        <li>Domestic & international</li>
+                        <li>No collateral up to ₹7.5L</li>
+                        <li>Moratorium period available</li>
+                        <li>Tax benefits available</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon">🏭</div>
+                    <h3>Corporate Finance</h3>
+                    <div class="rate">Customized Rates</div>
+                    <p>Large-scale corporate financing and structured solutions.</p>
+                    <ul class="service-features">
+                        <li>Project financing</li>
+                        <li>Trade finance solutions</li>
+                        <li>Debt restructuring</li>
+                        <li>Syndicated loans</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners" id="partners">
+        <div class="partners-container">
+            <h2>Our Banking Partners</h2>
+            <p style="font-size: 1.2rem; color: #666; margin-bottom: 40px;">Authorized representative of India's leading financial institutions</p>
+            <div class="partners-logos">
+                <div class="partner-logo">State Bank of India</div>
+                <div class="partner-logo">HDFC Bank</div>
+                <div class="partner-logo">ICICI Bank</div>
+                <div class="partner-logo">Axis Bank</div>
+                <div class="partner-logo">Kotak Bank</div>
+                <div class="partner-logo">Yes Bank</div>
+                <div class="partner-logo">IndusInd Bank</div>
+                <div class="partner-logo">Bank of Baroda</div>
+                <div class="partner-logo">PNB</div>
+                <div class="partner-logo">Canara Bank</div>
+                <div class="partner-logo">IDFC First</div>
+                <div class="partner-logo">Bajaj Finserv</div>
+            </div>
+            <p style="color: #666; font-style: italic;">+ 153 more banks and NBFCs</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Let's Work Together</h2>
+                <p>Ready to explore financing options or interested in partnering with us? Our expert team is here to provide personalized solutions for all your financial needs.</p>
+                <p>As an authorized corporate DMA, we ensure transparent processes, competitive rates, and professional service at every step.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span class="icon">📧</span>
+                        <span>info@fundinsolutions.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📱</span>
+                        <span>+91 98765 43210</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">🏢</span>
+                        <span>Mumbai, Maharashtra, India</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">⏰</span>
+                        <span>Mon-Sat: 9:00 AM - 7:00 PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Get In Touch</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inquiry">Inquiry Type</label>
+                        <select id="inquiry" name="inquiry">
+                            <option value="">Select inquiry type</option>
+                            <option value="loan-application">Loan Application</option>
+                            <option value="business-partnership">Business Partnership</option>
+                            <option value="corporate-finance">Corporate Finance</option>
+                            <option value="general-inquiry">General Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Please describe your requirements..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Send Message</button>
+                    <div class="success-message" id="successMessage">
+                        Thank you for your inquiry! We'll respond within 24 hours.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>FundInSolutions</h3>
+                <p>Your trusted corporate DMA authorized by 165+ banks and NBFCs. We provide comprehensive loan solutions with competitive rates and professional service.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#services">Home Loans</a></li>
+                    <li><a href="#services">Personal Loans</a></li>
+                    <li><a href="#services">Business Loans</a></li>
+                    <li><a href="#services">Vehicle Loans</a></li>
+                    <li><a href="#services">Education Loans</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#partners">Our Partners</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><strong>Karteek Hegde</strong> - Director</p>
+                <p>📧 fundinsolutions@gmail.com</p>
+                <p>🏢 Mumbai, Maharashtra</p>
+                <p>⏰ Mon-Sat: 9AM - 7PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 FundInSolutions. All rights reserved. | Licensed Corporate DMA</p>
+        </div>
+    </footer>
+
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            
+            // Add timestamp and source
+            data.timestamp = new Date().toISOString();
+            data.source = 'FundInSolutions Corporate Website';
+            
+            // Simulate form submission
+            console.log('Business inquiry received:', data);
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 6 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 6000);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Animate stats on scroll
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent.replace(/[^\d]/g, ''));
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    if (stat.textContent.includes('+')) {
+                        stat.textContent = Math.floor(current).toLocaleString() + '+';
+                    } else if (stat.textContent.includes('₹')) {
+                        stat.textContent = '₹' + Math.floor(current) + 'Cr+';
+                    } else {
+                        stat.textContent = Math.floor(current);
+                    }
+                }, 50);
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('stats')) {
+                        animateStats();
+                        observer.unobserve(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe stats section
+        observer.observe(document.querySelector('.stats'));
+
+        // Add hover effects to service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>
